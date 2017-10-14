@@ -1,0 +1,182 @@
+# Auto indent
+set autoindent
+
+# Back up edited files as <file_name>~
+#set backup
+
+# Backup directory
+#set backupdir ""
+
+# Perform case-sensitive searches
+set casesensitive
+
+# Display cursor position in the status bar
+set const
+
+# Make use of blank line below title bar
+set morespace
+
+# Allow the opening of multiple files (use ctrl+r)
+# This can be toggled with alt+f
+# Swap buffers with alt+, (reverse) and alt+. (forward)
+set multibuffer
+
+# Omit the helpful shortcut list at the bottom of the screen for more editing space
+set nohelp
+
+# Do not wrap text
+set nowrap
+
+# Ignore XON and XOFF (^Q and ^S)
+unset preserve
+
+# Perform extended regular expression searches
+set regexp
+
+# Use smooth scrolling (single line)
+set smooth
+
+# Use the following spelling checker
+set speller "hunspell"
+
+# Allow nano to be suspended (ctrl+z and then "fg" from the shell to resume)
+set suspend
+
+# Tab size is equal to *this* many spaces
+set tabsize 2
+
+# Convert typed tabs to spaces
+set tabstospaces
+
+# Keybinds
+# bind M-W nowrap main
+# bind M-A casesens search
+# bind ^S research main
+# bind kdel backspace all
+
+# Additional support for various programming languages
+# Nanorc files
+include "/usr/share/nano/nanorc.nanorc"
+
+# C/C++
+include "/usr/share/nano/c.nanorc"
+
+# Makefiles
+include "/usr/share/nano/makefile.nanorc"
+
+# Cascading Style Sheets
+include "/usr/share/nano/css.nanorc"
+
+# Debian files
+include "/usr/share/nano/debian.nanorc"
+
+# Gentoo files
+include "/usr/share/nano/gentoo.nanorc"
+
+# HTML
+include "/usr/share/nano/html.nanorc"
+
+# PHP
+include "/usr/share/nano/php.nanorc"
+
+# TCL
+include "/usr/share/nano/tcl.nanorc"
+
+# TeX
+include "/usr/share/nano/tex.nanorc"
+
+# Quoted emails (under e.g. mutt)
+include "/usr/share/nano/mutt.nanorc"
+
+# Patch files
+include "/usr/share/nano/patch.nanorc"
+
+# Manpages
+include "/usr/share/nano/man.nanorc"
+
+# Groff
+include "/usr/share/nano/groff.nanorc"
+
+# Perl
+include "/usr/share/nano/perl.nanorc"
+
+# Python
+include "/usr/share/nano/python.nanorc"
+
+# Ruby
+include "/usr/share/nano/ruby.nanorc"
+
+# Java
+include "/usr/share/nano/java.nanorc"
+
+# Fortran
+include "/usr/share/nano/fortran.nanorc"
+
+# Objective-C
+include "/usr/share/nano/objc.nanorc"
+
+# OCaml
+include "/usr/share/nano/ocaml.nanorc"
+
+# AWK
+include "/usr/share/nano/awk.nanorc"
+
+# Assembler
+include "/usr/share/nano/asm.nanorc"
+
+# Bourne shell scripts
+include "/usr/share/nano/sh.nanorc"
+
+# POV-Ray
+include "/usr/share/nano/pov.nanorc"
+
+# XML-type files
+include "/usr/share/nano/xml.nanorc"
+
+# Custom languages not included by default
+# These can be obtained from https://github.com/scopatz/nanorc
+
+# Clojure
+include "/usr/share/nano/clojure.nanorc"
+
+# CMake
+include "/usr/share/nano/cmake.nanorc"
+
+# CSharp
+include "/usr/share/nano/csharp.nanorc"
+
+# Go
+include "/usr/share/nano/go.nanorc"
+
+# Haskell
+include "/usr/share/nano/haskell.nanorc"
+
+# JavaScript
+include "/usr/share/nano/javascript.nanorc"
+
+# JSON
+include "/usr/share/nano/json.nanorc"
+
+# Lua
+include "/usr/share/nano/lua.nanorc"
+
+# Puppet
+include "/usr/share/nano/puppet.nanorc"
+
+# Rust
+include "/usr/share/nano/rust.nanorc"
+
+# Scala
+include "/usr/share/nano/scala.nanorc"
+
+# sed
+include "/usr/share/nano/sed.nanorc"
+
+# SQL
+include "/usr/share/nano/sql.nanorc"
+
+# Swift
+include "/usr/share/nano/swift.nanorc"
+
+# YAML
+include "/usr/share/nano/yaml.nanorc"
