@@ -122,6 +122,7 @@ shopt -s progcomp
 # Uncomment the line below to remove all existing aliases and start fresh
 #unalias -a
 # Aliases
+alias cd..="cd .."
 alias cls="clear"
 alias commit="git add . && git commit -a -m "
 alias cp="cp -i"
@@ -131,6 +132,7 @@ alias ducks="du -cks * | sort -nr | less"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias free="free -h"
+alias gpom="git push origin master"
 alias grep="grep --color=auto"
 alias la="ls -la --color=auto"
 alias ll="ls -l --color=auto"
