@@ -49,13 +49,12 @@ set tabsize 2
 set tabstospaces
 
 # Keybinds
-# bind M-W nowrap main
-# bind M-A casesens search
-# bind ^S research main
-# bind kdel backspace all
+#bind M-W nowrap main
+#bind M-A casesens search
+#bind ^S research main
+#bind kdel backspace all
 
 # Additional support for various programming languages
-# Nanorc files
 include "/usr/share/nano/nanorc.nanorc"
 
 # C/C++
