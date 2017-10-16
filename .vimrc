@@ -1,9 +1,10 @@
-" The status bar defined below requires vim enhanced. -ldilley
+" .vimrc
 
 " Show line numbers
 set number
 
 " Display a nice status bar
+" This requires vim enhanced
 set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
 
