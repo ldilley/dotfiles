@@ -1,3 +1,5 @@
+# .nanorc
+
 # Auto indent
 set autoindent
 
@@ -55,6 +57,8 @@ set tabstospaces
 #bind kdel backspace all
 
 # Additional support for various programming languages
+
+# Nanorc files
 include "/usr/share/nano/nanorc.nanorc"
 
 # C/C++

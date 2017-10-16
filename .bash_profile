@@ -2,5 +2,5 @@
 
 # Load stuff from .bashrc
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+  . ~/.bashrc
 fi
