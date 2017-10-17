@@ -1,9 +1,12 @@
 # .screenrc
 
+# Attempts to mirror the functionality of
+# https://github.com/ldilley/dotfiles/blob/master/.tmux.conf as closely as possible. -ldilley
+
 # Display notification when activity is detected for a window
 activity "Activity detected in %t (%n)!"
 
-# Do not show the tail end of previously opened programs such as editors
+# Do not show the remnants of previously opened programs such as editors
 altscreen on
 
 # Ensure the session is saved on hangup
@@ -28,7 +31,7 @@ defmonitor on
 
 # Set the status bar
 hardstatus alwayslastline 
-hardstatus string "%{= kg}[%{c}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d/%Y %{m}%c%{g}]"
+hardstatus string "%{= kg}[%{c}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{m}%m/%d/%Y %{r}%c%{g}]"
 
 # Start with a few named windows and configure the layout
 # Navigate the windows with ctrl+a+<window_number> and areas with ctrl+a+<tab>.
@@ -58,9 +61,10 @@ vbell off
 
 # Custom keybinds
 # These may need to be re-defined depending on your terminal.
+# For PuTTY, enable "Xterm R6" function keys under Terminal -> Keyboard to use the F3 and F4 key codes defined below.
 # You can use "showkey -a" to capture the key definitions for your terminal.
-bindkey "^[[13~" prev       # F3 = previous window
-bindkey "^[[14~" next       # F4 = next window
+bindkey "^[OR" prev         # F3 = previous window
+bindkey "^[OS" next         # F4 = next window
 bindkey "^[[A" focus top    # ctrl+up_arrow = large top area
 bindkey "^[[B" focus down   # ctrl+down_arrow = bottom-left area
 bindkey "^[[C" focus bottom # ctrl+right_arrow = bottom-right area
