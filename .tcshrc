@@ -1,0 +1,126 @@
+# .tcshrc
+
+# Various colors
+# Note: "1;" appears as bold when using xterm. If you want the font thinner, use 0 (zero) instead.
+set plain="%{\033[0m%}"
+set blue="%{\033[1;34m%}"
+set cyan="%{\033[1;36m%}"
+set green="%{\033[1;32m%}"
+set magenta="%{\033[1;35m%}"
+set red="%{\033[1;31m%}"
+set white="%{\033[1;37m%}"
+set yellow="%{\033[1;33m%}"
+
+set prompt="${white}<${yellow}`date +"%T"`${white}> (${magenta}%c${white})\n${white}[${cyan}%n${white}@${cyan}%m${white}] ${white}{${blue}%h${white}}% ${plain}"
+
+# Set the Java home below if you have one
+#setenv JAVA_HOME "/opt/jdk"
+
+# Path
+if (! $?JAVA_HOME) then        # JAVA_HOME is undefined
+  set path = (/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $path $HOME/bin)
+else
+  if ("$JAVA_HOME" == "") then # JAVA_HOME is empty
+    set path = (/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $path $HOME/bin)
+  else                         # JAVA_HOME is defined
+    set path = (/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $path $HOME/bin ${JAVA_HOME}/bin)
+  endif
+endif
+
+# Set DISPLAY appropriately if using an X server
+#setenv DISPLAY localhost:0.0
+
+# Set default editor
+setenv EDITOR vim
+setenv VISUAL vim
+
+# Use less instead of more to navigate pages of data on the screen
+setenv PAGER less
+
+# Uncomment the line below to disable terminal messaging from other users
+#mesg n
+
+# A reasonable umask (use 077 for increased security)
+umask 022
+
+# Check input before completion attempts
+set autocorrect
+
+# Check for previous matches in the history for auto-completion
+set autoexpand
+
+# Enable tab completion
+set autolist
+
+# Enable ls-F, ls, and NLS color
+set color
+set colorcat
+
+# Detect and attempt to correct erroneous input
+set correct=cmd
+
+# Set the location and name of the history file
+# The default is "~/.history".
+#set histfile = ~/.tcsh_history 
+
+# Store up to this many lines in the history file and merge with existing
+set savehist=(10000 merge)
+
+# Store up to this many lines in memory for the history of the current session
+# The date and time format is also specified.
+set history=(1500 "%h %W/%D/%Y %T - %R\n")
+
+# If the previous command is the same as the current one, do not add it to the history
+# Set this to "all" or "erase" to eliminate duplicate entries.
+set histdup=prev
+
+# Print and save the literal form of the history
+set histlit
+
+# List all jobs when backgrounding a job
+set listjobs
+
+# Disable the bell
+#set nobeep
+
+# Disallow > operator on a file that already exists
+# This is an additional layer of protection against accidental overwrites.
+set noclobber
+
+# Notify of job status changes
+set notify
+
+# Verify "rm *" command use
+set rmstar
+
+# Optionally do stuff before a command is executed if this is defined
+#alias precmd ''
+
+# Save each command to the history file after it is entered
+alias postcmd 'history -S'
+
+# Uncomment the line below to remove all existing aliases and start fresh
+#unalias *
+# Aliases
+alias cd.. 'cd ..'
+alias cls 'clear'
+alias commit 'git add . && git commit -a -m '
+alias cp 'cp -i'
+alias cwd 'pwd'
+alias df 'df -h'
+alias ducks 'du -cks * | sort -nr | less'
+alias egrep 'egrep --color=auto'
+alias fgrep 'fgrep --color=auto'
+alias free 'free -h'
+alias gpom 'git push origin master'
+alias grep 'grep --color=auto'
+alias la 'ls -la --color=auto'
+alias ll 'ls -l --color=auto'
+alias ln 'ln -i'
+alias ls 'ls -F --color=auto'
+alias md 'mkdir'
+alias more 'less'
+alias mv 'mv -i'
+alias rd 'rmdir'
+alias rm 'rm -i'
+alias vi 'vim'

@@ -11,7 +11,7 @@ PLAIN="\[\033[0m\]"
 BLUE="\[\033[1;34m\]"
 CYAN="\[\033[1;36m\]"
 GREEN="\[\033[1;32m\]"
-PURPLE="\[\033[1;35m\]"
+MAGENTA="\[\033[1;35m\]"
 RED="\[\033[1;31m\]"
 WHITE="\[\033[1;37m\]"
 YELLOW="\[\033[1;33m\]"
@@ -33,9 +33,9 @@ fi
 if [ -f ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
   # Set the appearance of the shell prompt
-  PS1="${WHITE}<${YELLOW}\t${WHITE}>\$(__git_ps1 \" (%s)\") (${PURPLE}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
+  PS1="${WHITE}<${YELLOW}\t${WHITE}>\$(__git_ps1 \" (%s)\") (${MAGENTA}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
 else
-  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${PURPLE}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
+  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
 fi
 
 # Set the Java home below if you have one
@@ -54,6 +54,7 @@ export PATH
 
 # Set default editor
 export EDITOR=vim
+export VISUAL=vim
 
 # Do not include commands followed by spaces or repeated commands in the history
 export HISTCONTROL=ignoreboth
@@ -82,6 +83,10 @@ umask 022
 
 # Append each command to .bash_history after it is entered
 PROMPT_COMMAND="history -a"
+
+# Disallow > operator on a file that already exists
+# This is an additional layer of protection against accidental overwrites.
+set -o noclobber
 
 # Notify of job completion
 set -o notify
@@ -137,7 +142,7 @@ alias grep="grep --color=auto"
 alias la="ls -la --color=auto"
 alias ll="ls -l --color=auto"
 alias ln="ln -i"
-alias ls="ls --color=auto"
+alias ls="ls -F --color=auto"
 alias md="mkdir"
 alias more="less"
 alias mv="mv -i"
