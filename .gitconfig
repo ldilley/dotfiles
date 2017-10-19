@@ -1,0 +1,34 @@
+[user]
+  name = John Dough
+  email = john@dough.doh
+  signingkey = D34DB33F
+[github]
+  user = jdough
+  token = secret
+[credential]
+  helper = store
+[core]
+  editor = vim
+[diff]
+  tool = vimdiff
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+[mergetool]
+  prompt = false
+[color]
+  ui = auto
+[grep]
+  lineNumber = true
+[commit]
+  gpgsign = true
+[push]
+  default = simple
+[alias]
+  a = add
+  c = commit
+  d = diff
+  g = grep
+  l = log
+  s = status
+  pom = push origin master
