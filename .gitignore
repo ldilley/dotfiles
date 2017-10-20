@@ -1,0 +1,83 @@
+# .gitignore
+
+# Archives
+*.7z
+*.gz
+*.bz2
+*.rar
+*.tar
+*.tgz
+*.zip
+
+# CMake
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+cmake_install.cmake
+
+# Compiled objects
+*.o
+*.obj
+
+# Libraries
+*.a
+*.la
+*.lo
+*.so
+*.dll
+*.dylib
+*.lai
+*.lib
+
+# Pre-compiled headers
+*.gch
+*.pch
+
+# Android
+*.apk
+*.dex
+
+# Java
+*.class
+*.jar
+*.war
+
+# Linux and Unix
+*.swp
+
+# macOS
+*.app
+*.dmg
+
+# DOS and Windows
+*.com
+*.exe
+*.msi
+
+# Crypto
+*.cer
+*.crl
+*.crt
+*.csr
+*.der
+*.key
+*.p12
+*.p7b
+*.pem
+*.pfx
+*.cert
+
+# Other binaries
+*.ko
+*.bin
+
+# Other text
+*.log
+*.out
+*.pid
+*.lock
+
+# Exclude these directories
+log/
+logs/
+tmp/
