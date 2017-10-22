@@ -1,19 +1,29 @@
 # .zshrc
 
-# Set the appearance of the shell prompt
-PROMPT='%B<%F{yellow}%*%f> (%F{magenta}%1~%f%)
-[%F{cyan}%n%f@%F{cyan}%m%f] %(?,%F{green}:%)%f,%F{red}:(%f) {%F{blue}%!%f}%#%b '
-
 # Set the Java home below if you have one
 #export JAVA_HOME=/opt/jdk
 
 # Path
 if [ -z ${JAVA_HOME+x} ]; then
-  PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$PATH:~/bin"
+  export PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 else
-  PATH="$JAVA_HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$PATH:~/bin"
+  export PATH="$JAVA_HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 fi
-export PATH
+
+# Git repo support (optional)
+# I chose git-prompt (requires Go) for portability, speed, and the visuals.
+# To obtain: git clone https://github.com/olemb/git-prompt
+# After building, copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
+if [[ -x git-prompt ]]; then
+  # Allow variable expansion in the shell prompt
+  setopt prompt_subst
+  # Set the appearance of the shell prompt
+  PROMPT=$'%B<%F{yellow}%*%f> (%F{magenta}%1~%f%) `git-prompt`
+[%F{cyan}%n%f@%F{cyan}%m%f] %(?,%F{green}:%)%f,%F{red}:(%f) {%F{blue}%!%f}%#%b '
+else
+  PROMPT='%B<%F{yellow}%*%f> (%F{magenta}%1~%f%)
+[%F{cyan}%n%f@%F{cyan}%m%f] %(?,%F{green}:%)%f,%F{red}:(%f) {%F{blue}%!%f}%#%b '
+fi
 
 # Set DISPLAY appropriately if using an X server
 #export DISPLAY=localhost:0.0
