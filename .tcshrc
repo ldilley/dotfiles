@@ -18,12 +18,12 @@ set prompt="${white}<${yellow}`date +"%T"`${white}> (${magenta}%c${white})\n${wh
 
 # Path
 if (! $?JAVA_HOME) then        # JAVA_HOME is undefined
-  set path = (/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $path $HOME/bin)
+  set path = (/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $HOME/bin $path)
 else
   if ("$JAVA_HOME" == "") then # JAVA_HOME is empty
-    set path = (/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $path $HOME/bin)
+    set path = (/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $HOME/bin $path)
   else                         # JAVA_HOME is defined
-    set path = (/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $path $HOME/bin ${JAVA_HOME}/bin)
+    set path = (${JAVA_HOME}/bin /opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $HOME/bin $path)
   endif
 endif
 

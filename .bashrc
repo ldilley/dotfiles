@@ -16,38 +16,39 @@ RED="\[\033[1;31m\]"
 WHITE="\[\033[1;37m\]"
 YELLOW="\[\033[1;33m\]"
 
-# Change prompt based on the exit code of the last command
-SMILE="${GREEN}:)${PLAIN}"
-FROWN="${RED}:(${PLAIN}"
-FACE="if [ \$? = 0 ]; then echo \"${SMILE}\"; else echo \"${FROWN}\"; fi"
-
-# Git completion and repo status support
-# Download these from:
-# https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
-# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
-# Rename them to .git-completion.bash and .git-prompt.sh
-if [ -f ~/.git-completion.bash ]; then
-  source ~/.git-completion.bash
-fi
-
-if [ -f ~/.git-prompt.sh ]; then
-  source ~/.git-prompt.sh
-  # Set the appearance of the shell prompt
-  PS1="${WHITE}<${YELLOW}\t${WHITE}>\$(__git_ps1 \" (%s)\") (${MAGENTA}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
-else
-  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
-fi
-
 # Set the Java home below if you have one
 #export JAVA_HOME=/opt/jdk
 
 # Path
 if [ -z ${JAVA_HOME+x} ]; then
-  PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$PATH:~/bin"
+  export PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 else
-  PATH="$JAVA_HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$PATH:~/bin"
+  export PATH="$JAVA_HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 fi
-export PATH
+
+# Change prompt based on the exit code of the last command
+SMILE="${GREEN}:)${PLAIN}"
+FROWN="${RED}:(${PLAIN}"
+FACE="if [ \$? = 0 ]; then echo \"${SMILE}\"; else echo \"${FROWN}\"; fi"
+
+# Git completion (optional)
+# Download this from:
+# https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+# Rename to .git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+# Git repo status support (optional)
+# I chose git-prompt (requires Go) for portability, speed, and the visuals.
+# To obtain: git clone https://github.com/olemb/git-prompt
+# After building, copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
+if [[ -x git-prompt ]]; then
+  # Set the appearance of the shell prompt
+  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE}) \$(git-prompt)\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
+else
+  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
+fi
 
 # Set DISPLAY appropriately if using an X server
 #export DISPLAY=localhost:0.0
