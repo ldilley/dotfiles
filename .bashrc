@@ -43,7 +43,7 @@ fi
 # I chose git-prompt (requires Go) for portability, speed, and the visuals.
 # To obtain: git clone https://github.com/olemb/git-prompt
 # After building, copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
-if [[ -x git-prompt ]]; then
+if [[ -x `command -v git-prompt` ]]; then
   # Set the appearance of the shell prompt
   PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE}) \$(git-prompt)\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
 else
