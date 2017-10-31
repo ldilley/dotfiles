@@ -96,7 +96,7 @@ set rmstar
 # Optionally do stuff before a command is executed if this is defined
 #alias precmd ''
 
-# Save each command to the history file after it is entered
+# Save each command to the history file after it is entered (this also increments the history number +1)
 alias postcmd 'history -S'
 
 # Uncomment the line below to remove all existing aliases and start fresh

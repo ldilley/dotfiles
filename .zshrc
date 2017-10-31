@@ -10,11 +10,11 @@ else
   export PATH="$JAVA_HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 fi
 
-# Git repo support (optional)
+# Git repo status support (optional)
 # I chose git-prompt (requires Go) for portability, speed, and the visuals.
 # To obtain: git clone https://github.com/olemb/git-prompt
 # After building, copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
-if [[ -x git-prompt ]]; then
+if [[ -x `command -v git-prompt` ]]; then
   # Allow variable expansion in the shell prompt
   setopt prompt_subst
   # Set the appearance of the shell prompt
