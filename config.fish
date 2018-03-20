@@ -42,8 +42,8 @@ set -g yellow (set_color ffff00)
 # If $HOSTNAME is not set, set it up to the first dot
 test $HOSTNAME; or set -x HOSTNAME (hostname | string split '.')[1]
 
-# Remove the welcome message
-set -e fish_greeting
+# Nullify the welcome message
+set fish_greeting
 
 # Configure the git prompt
 set __fish_git_prompt_showdirtystate true
