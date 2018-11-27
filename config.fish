@@ -39,8 +39,8 @@ set -g red (set_color ff0000)
 set -g white (set_color ffffff)
 set -g yellow (set_color ffff00)
 
-# If $HOSTNAME is not set, set it up to the first dot
-test $HOSTNAME; or set -x HOSTNAME (hostname | string split '.')[1]
+# Discard domain portion of hostname if included
+set -x HOSTNAME (hostname | string split '.')[1]
 
 # Nullify the welcome message
 set fish_greeting
