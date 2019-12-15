@@ -13,7 +13,9 @@ set autoindent
 set casesensitive
 
 # Display cursor position in the status bar
-set const
+# "const" has been deprecated since nano 2.9.7. Use "constantshow" in nano >=2.9.7.
+#set const
+set constantshow
 
 # Make use of blank line below title bar
 set morespace
@@ -138,21 +140,22 @@ include "/usr/share/nano/xml.nanorc"
 
 # Custom languages not included by default
 # These can be obtained from https://github.com/scopatz/nanorc
+# The uncommented languages are now supported by default in Debian 10.
 
 # Clojure
-include "/usr/share/nano/clojure.nanorc"
+#include "/usr/share/nano/clojure.nanorc"
 
 # CMake
 include "/usr/share/nano/cmake.nanorc"
 
 # CSharp
-include "/usr/share/nano/csharp.nanorc"
+#include "/usr/share/nano/csharp.nanorc"
 
 # Go
 include "/usr/share/nano/go.nanorc"
 
 # Haskell
-include "/usr/share/nano/haskell.nanorc"
+#include "/usr/share/nano/haskell.nanorc"
 
 # JavaScript
 include "/usr/share/nano/javascript.nanorc"
@@ -164,22 +167,22 @@ include "/usr/share/nano/json.nanorc"
 include "/usr/share/nano/lua.nanorc"
 
 # Puppet
-include "/usr/share/nano/puppet.nanorc"
+#include "/usr/share/nano/puppet.nanorc"
 
 # Rust
 include "/usr/share/nano/rust.nanorc"
 
 # Scala
-include "/usr/share/nano/scala.nanorc"
+#include "/usr/share/nano/scala.nanorc"
 
 # sed
-include "/usr/share/nano/sed.nanorc"
+#include "/usr/share/nano/sed.nanorc"
 
 # SQL
-include "/usr/share/nano/sql.nanorc"
+#include "/usr/share/nano/sql.nanorc"
 
 # Swift
-include "/usr/share/nano/swift.nanorc"
+#include "/usr/share/nano/swift.nanorc"
 
 # YAML
-include "/usr/share/nano/yaml.nanorc"
+#include "/usr/share/nano/yaml.nanorc"
