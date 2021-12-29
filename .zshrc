@@ -18,11 +18,11 @@ if [[ -x `command -v git-prompt` ]]; then
   # Allow variable expansion in the shell prompt
   setopt prompt_subst
   # Set the appearance of the shell prompt
-  PROMPT=$'%B<%F{yellow}%*%f> (%F{magenta}%1~%f%) `git-prompt`
-[%F{cyan}%n%f@%F{cyan}%m%f] %(?,%F{green}:%)%f,%F{red}:(%f) {%F{blue}%!%f}%#%b '
+  PROMPT=$'<%F{yellow}%*%f> (%F{magenta}%1~%f%) `git-prompt`
+[%F{cyan}%n%f@%F{cyan}%m%f] %(?,%F{green}:%)%f,%F{red}:(%f) {%F{yellow}%!%f}%#%b '
 else
-  PROMPT='%B<%F{yellow}%*%f> (%F{magenta}%1~%f%)
-[%F{cyan}%n%f@%F{cyan}%m%f] %(?,%F{green}:%)%f,%F{red}:(%f) {%F{blue}%!%f}%#%b '
+  PROMPT='<%F{yellow}%*%f> (%F{magenta}%1~%f%)
+[%F{cyan}%n%f@%F{cyan}%m%f] %(?,%F{green}:%)%f,%F{red}:(%f) {%F{yellow}%!%f}%#%b '
 fi
 
 # Set DISPLAY appropriately if using an X server
@@ -47,8 +47,8 @@ export PAGER=less
 # Uncomment the line below to disable terminal messaging from other users
 #mesg n
 
-# A reasonable umask (use 077 for increased security)
-umask 022
+# A reasonable umask (use 027 or 077 for increased security)
+umask 027
 
 # Append to the history file rather than create a new one
 setopt appendhistory

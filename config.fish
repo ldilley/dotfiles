@@ -26,8 +26,8 @@ set -gx PAGER less
 # Uncomment the line below to disable terminal messaging from other users
 #mesg n
 
-# A reasonable umask (use 077 for increased security)
-umask 022
+# A reasonable umask (use 027 or 077 for increased security)
+umask 027
 
 # Various colors
 set -g plain (set_color normal)

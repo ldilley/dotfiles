@@ -1,20 +1,15 @@
 # .bashrc
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
-fi
-
 # Various colors
 # Note: "1;" appears as bold when using xterm. If you want the font thinner, use 0 (zero) instead.
 PLAIN="\[\033[0m\]"
-BLUE="\[\033[1;34m\]"
-CYAN="\[\033[1;36m\]"
-GREEN="\[\033[1;32m\]"
-MAGENTA="\[\033[1;35m\]"
-RED="\[\033[1;31m\]"
-WHITE="\[\033[1;37m\]"
-YELLOW="\[\033[1;33m\]"
+BLUE="\[\033[0;34m\]"
+CYAN="\[\033[0;36m\]"
+GREEN="\[\033[0;32m\]"
+MAGENTA="\[\033[0;35m\]"
+RED="\[\033[0;31m\]"
+WHITE="\[\033[0;37m\]"
+YELLOW="\[\033[0;33m\]"
 
 # Set the Java home below if you have one
 #export JAVA_HOME=/opt/jdk
@@ -31,13 +26,20 @@ SMILE="${GREEN}:)${PLAIN}"
 FROWN="${RED}:(${PLAIN}"
 FACE="if [ \$? = 0 ]; then echo \"${SMILE}\"; else echo \"${FROWN}\"; fi"
 
+# Check effective UID and set trailing prompt character appropriately if user is root
+if [[ $EUID -eq 0 ]]; then
+  PROMPT_SIGIL="#"
+else
+  PROMPT_SIGIL="$"
+fi
+
 # Git completion (optional)
 # Download this from:
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 # Rename to .git-completion.bash
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
+#if [ -f ~/.git-completion.bash ]; then
+#  . ~/.git-completion.bash
+#fi
 
 # Git repo status support (optional)
 # I chose git-prompt (requires Go) for portability, speed, and the visuals.
@@ -45,9 +47,9 @@ fi
 # After building, copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
 if [[ -x `command -v git-prompt` ]]; then
   # Set the appearance of the shell prompt
-  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE}) \$(git-prompt)\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
+  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE}) \$(git-prompt)\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${YELLOW}\!${WHITE}}${PROMPT_SIGIL} ${PLAIN}"
 else
-  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${BLUE}\!${WHITE}}$ ${PLAIN}"
+  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${YELLOW}\!${WHITE}}${PROMPT_SIGIL} ${PLAIN}"
 fi
 
 # Set DISPLAY appropriately if using an X server
@@ -79,8 +81,8 @@ export PAGER=less
 # Uncomment the line below to disable terminal messaging from other users
 #mesg n
 
-# A reasonable umask (use 077 for increased security)
-umask 022
+# A reasonable umask (use 027 or 077 for increased security)
+umask 027
 
 # Append each command to .bash_history after it is entered
 PROMPT_COMMAND="history -a"
