@@ -37,10 +37,16 @@ cmake_install.cmake
 *.apk
 *.dex
 
+# Elixir bytecode
+*.beam
+
 # Java
 *.class
 *.jar
 *.war
+
+# Python bytecode
+*.pyc
 
 # Linux and Unix
 *.swp
@@ -78,6 +84,8 @@ cmake_install.cmake
 *.lock
 
 # Exclude these directories
+bld/
+build/
 log/
 logs/
 tmp/
