@@ -84,8 +84,10 @@ cmake_install.cmake
 *.lock
 
 # Exclude these directories
+bin/
 bld/
 build/
 log/
 logs/
+obj/
 tmp/
