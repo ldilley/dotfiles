@@ -49,6 +49,7 @@ cmake_install.cmake
 *.pyc
 
 # Linux and Unix
+*.core
 *.swp
 
 # macOS
