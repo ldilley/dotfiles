@@ -17,6 +17,9 @@ set casesensitive
 #set const
 set constantshow
 
+# Display line numbers
+set linenumbers
+
 # Make use of blank line below title bar (obsoleted in >=4.0)
 #set morespace
 
