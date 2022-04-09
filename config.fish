@@ -110,6 +110,7 @@ alias more="less"
 alias mv="mv -i"
 alias rd="rmdir"
 alias rm="rm -i"
+alias tree="tree -C"
 alias vi="vim"
 
 # Custom functions

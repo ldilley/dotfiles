@@ -121,11 +121,12 @@ alias more="less"
 alias mv="mv -i"
 alias rd="rmdir"
 alias rm="rm -i"
+alias tree="tree -C"
 alias vi="vim"
 
 # Functions
-# Print a hierarchical list of directories
-tree()
-{
-  ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
-}
+# Print a hierarchical list of directories (if tree is not installed)
+#tree()
+#{
+#  ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+#}
