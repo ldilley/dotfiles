@@ -17,8 +17,8 @@ set casesensitive
 #set const
 set constantshow
 
-# Make use of blank line below title bar
-set morespace
+# Make use of blank line below title bar (obsoleted in >=4.0)
+#set morespace
 
 # Allow the opening of multiple files (use ctrl+r)
 # This can be toggled with alt+f
@@ -37,8 +37,8 @@ unset preserve
 # Perform extended regular expression searches
 set regexp
 
-# Use smooth scrolling (single line)
-set smooth
+# Use smooth scrolling (single line) (obsoleted in >=4.0)
+#set smooth
 
 # Use the following spelling checker
 set speller "hunspell"
