@@ -55,6 +55,11 @@ set tabsize 2
 # Convert typed tabs to spaces
 set tabstospaces
 
+# Custom colors
+set numbercolor magenta,black
+set statuscolor black,yellow
+set titlecolor black,cyan
+
 # Keybinds
 #bind M-W nowrap main
 #bind M-A casesens search
