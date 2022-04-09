@@ -86,6 +86,7 @@ set_prompt()
   retval="$?"
   date=`date +"%T"`
   uid=`id -u`
+  host_name=`hostname | cut -d'.' -f1`
 
   # Change prompt based on the exit code of the last command
   if [[ "$retval" = 0 ]] then
@@ -113,9 +114,9 @@ set_prompt()
   # To obtain: git clone https://github.com/olemb/git-prompt
   # After building, copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
   if [[ -x `command -v git-prompt` ]] then
-    print -n "$WHITE<$YELLOW$date$WHITE> ($MAGENTA$cwd$WHITE) `git-prompt`\n[$CYAN`whoami`$WHITE@$CYAN`hostname`$WHITE] $face $WHITE{$YELLOW"!"$WHITE}$prompt_sigil $PLAIN"
+    print -n "$WHITE<$YELLOW$date$WHITE> ($MAGENTA$cwd$WHITE) `git-prompt`\n[$CYAN`whoami`$WHITE@$CYAN$host_name$WHITE] $face $WHITE{$YELLOW"!"$WHITE}$prompt_sigil $PLAIN"
   else
-    print -n "$WHITE<$YELLOW$date$WHITE> ($MAGENTA$cwd$WHITE)\n[$CYAN`whoami`$WHITE@$CYAN`hostname`$WHITE] $face $WHITE{$YELLOW"!"$WHITE}$prompt_sigil $PLAIN"
+    print -n "$WHITE<$YELLOW$date$WHITE> ($MAGENTA$cwd$WHITE)\n[$CYAN`whoami`$WHITE@$CYAN$host_name$WHITE] $face $WHITE{$YELLOW"!"$WHITE}$prompt_sigil $PLAIN"
   fi
 
   unset retval face date cwd uid prompt_sigil
