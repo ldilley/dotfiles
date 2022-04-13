@@ -36,9 +36,8 @@ else
 fi
 
 # Git repo status support (optional)
-# I chose git-prompt (requires Go) for portability, speed, and the visuals.
 # To obtain: git clone https://github.com/olemb/git-prompt
-# After building, copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
+# After building (go build git-prompt.go), copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
 if [[ -x `command -v git-prompt` ]]; then
   # Set the appearance of the shell prompt
   PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE}) \$(git-prompt)\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${YELLOW}\!${WHITE}}${PROMPT_SIGIL} ${PLAIN}"

@@ -1,4 +1,6 @@
 # .kshrc
+# Lloyd Dilley
+# https://github.com/ldilley/dotfiles
 
 # Various colors
 # Note: "1;" appears as bold when using xterm. If you want the font thinner, use 0 (zero) instead.
@@ -119,9 +121,8 @@ set_prompt()
   fi
 
   # Git repo status support (optional)
-  # I chose git-prompt (requires Go) for portability, speed, and the visuals.
   # To obtain: git clone https://github.com/olemb/git-prompt
-  # After building, copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
+  # After building (go build git-prompt.go), copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
   if [[ -x `command -v git-prompt` ]] then
     print -n "$WHITE<$YELLOW$date$WHITE> ($MAGENTA$cwd$WHITE) `git-prompt`\n[$CYAN`whoami`$WHITE@$CYAN$host_name$WHITE] $face $WHITE{$YELLOW"!"$WHITE}$prompt_sigil $PLAIN"
   else
