@@ -1,4 +1,6 @@
 # ~/.config/fish/config.fish
+# Lloyd Dilley
+# https://github.com/ldilley/dotfiles
 
 # Set the Java home below if you have one
 #set -gx JAVA_HOME /opt/jdk

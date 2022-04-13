@@ -1,7 +1,6 @@
 # .screenrc
-
-# Attempts to mirror the functionality of
-# https://github.com/ldilley/dotfiles/blob/master/.tmux.conf as closely as possible. -ldilley
+# Lloyd Dilley
+# https://github.com/ldilley/dotfiles
 
 # Display notification when activity is detected for a window
 activity "Activity detected in %t (%n)!"

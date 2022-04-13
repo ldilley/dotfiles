@@ -1,4 +1,6 @@
 # .zshrc
+# Lloyd Dilley
+# https://github.com/ldilley/dotfiles
 
 # Set the Java home below if you have one
 #export JAVA_HOME=/opt/jdk

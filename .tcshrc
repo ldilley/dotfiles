@@ -1,4 +1,6 @@
 # .tcshrc
+# Lloyd Dilley
+# https://github.com/ldilley/dotfiles
 
 # Various colors
 # Note: "1;" appears as bold when using xterm. If you want the font thinner, use 0 (zero) instead.

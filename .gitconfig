@@ -1,3 +1,7 @@
+# .gitconfig
+# Lloyd Dilley
+# https://github.com/ldilley/dotfiles
+
 [user]
   name = John Dough
   email = john@dough.doh

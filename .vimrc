@@ -1,4 +1,6 @@
 " .vimrc
+" Lloyd Dilley
+" https://github.com/ldilley/dotfiles
 
 " Use vim features that are not compatible with vi
 set nocp
