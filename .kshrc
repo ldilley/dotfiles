@@ -24,6 +24,9 @@ fi
 # Set the appearance of the shell prompt using the "set_prompt" function defined in the "Functions" section
 PS1='`set_prompt`'
 
+# Terminal type
+export TERM=xterm-256color
+
 # Set DISPLAY appropriately if using an X server
 #export DISPLAY=localhost:0.0
 

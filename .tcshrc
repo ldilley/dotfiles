@@ -33,6 +33,9 @@ else
   endif
 endif
 
+# Terminal type
+setenv TERM xterm-256color
+
 # Set DISPLAY appropriately if using an X server
 #setenv DISPLAY localhost:0.0
 

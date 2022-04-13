@@ -27,6 +27,9 @@ else
 [%F{cyan}%n%f@%F{cyan}%m%f] %(?,%F{green}:%)%f,%F{red}:(%f) {%F{yellow}%!%f}%#%b '
 fi
 
+# Terminal type
+export TERM=xterm-256color
+
 # Set DISPLAY appropriately if using an X server
 #export DISPLAY=localhost:0.0
 

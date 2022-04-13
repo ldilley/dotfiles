@@ -12,6 +12,9 @@ else
   set -gx PATH /opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin $HOME/bin $PATH ^/dev/null
 end
 
+# Terminal type
+set -gx TERM xterm-256color
+
 # Set DISPLAY appropriately if using an X server
 #set -gx DISPLAY localhost:0.0
 
