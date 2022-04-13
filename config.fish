@@ -36,13 +36,13 @@ umask 027
 
 # Various colors
 set -g plain (set_color normal)
-set -g blue (set_color 0000ff)
-set -g cyan (set_color 00ffff)
-set -g green (set_color 00ff00)
-set -g magenta (set_color ff00ff)
-set -g red (set_color ff0000)
-set -g white (set_color ffffff)
-set -g yellow (set_color ffff00)
+set -g blue (set_color blue)
+set -g cyan (set_color cyan)
+set -g green (set_color green)
+set -g magenta (set_color magenta)
+set -g red (set_color red)
+set -g white (set_color white)
+set -g yellow (set_color yellow)
 
 # Discard domain portion of hostname if included
 set -x HOSTNAME (hostname | string split '.')[1]
