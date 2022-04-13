@@ -35,14 +35,6 @@ else
   PROMPT_SIGIL="$"
 fi
 
-# Git completion (optional)
-# Download this from:
-# https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
-# Rename to .git-completion.bash
-#if [ -f ~/.git-completion.bash ]; then
-#  . ~/.git-completion.bash
-#fi
-
 # Git repo status support (optional)
 # I chose git-prompt (requires Go) for portability, speed, and the visuals.
 # To obtain: git clone https://github.com/olemb/git-prompt
