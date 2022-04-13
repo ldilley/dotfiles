@@ -13,7 +13,10 @@ set red="%{\033[0;31m%}"
 set white="%{\033[0;37m%}"
 set yellow="%{\033[0;33m%}"
 
-set prompt="${white}<${yellow}`date +"%T"`${white}> (${magenta}%c${white})\n${white}[${cyan}%n${white}@${cyan}%m${white}] ${white}{${yellow}%h${white}}%# ${plain}"
+# Prompt appearance
+set prompt="${white}<${yellow}%P${white}> (${magenta}%c${white})\n${white}[${cyan}%n${white}@${cyan}%m${white}] ${white}{${yellow}%h${white}}%# ${plain}"
+
+# First character indicates a regular user prompt and second indicates a root prompt
 set promptchars = "%#"
 
 # Set the Java home below if you have one
