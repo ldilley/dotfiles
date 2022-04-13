@@ -95,6 +95,9 @@ end
 #  echo (__fish_git_prompt)
 #end
 
+# Set backspace as erase key
+stty erase '^?'
+
 # Enable color support for BSD and macOS if TERM supports it
 set -gx CLICOLOR 1
 

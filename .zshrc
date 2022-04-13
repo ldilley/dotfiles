@@ -95,6 +95,9 @@ setopt notify
 # Use vi mode in the zsh line editor (-e for emacs)
 bindkey -v
 
+# Set backspace as erase key
+stty erase '^?'
+
 # Enable color support for BSD and macOS if TERM supports it
 export CLICOLOR=1
 

@@ -57,6 +57,9 @@ set -o noclobber
 # Notify of job completion
 set -o notify
 
+# Set backspace as erase key
+stty erase '^?'
+
 # Enable color support for BSD and macOS if TERM supports it
 export CLICOLOR=1
 

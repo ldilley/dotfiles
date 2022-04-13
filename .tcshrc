@@ -104,6 +104,9 @@ set rmstar
 # Save each command to the history file after it is entered (this also increments the history number +1)
 #alias postcmd 'history -M'
 
+# Set backspace as erase key
+stty erase '^?'
+
 # Enable ls-F, ls, and NLS color
 set color
 set colorcat
