@@ -13,8 +13,13 @@ set red="%{\033[0;31m%}"
 set white="%{\033[0;37m%}"
 set yellow="%{\033[0;33m%}"
 
+# Face to signify return code of last command
+set smile="${green}:)${plain}"
+set frown="${red}:(${plain}"
+set face="${smile}"
+
 # Prompt appearance
-set prompt="${white}<${yellow}%P${white}> (${magenta}%c${white})\n${white}[${cyan}%n${white}@${cyan}%m${white}] ${white}{${yellow}%h${white}}%# ${plain}"
+set prompt="${white}<${yellow}%P${white}> (${magenta}%c${white})\n${white}[${cyan}%n${white}@${cyan}%m${white}] ${face} ${white}{${yellow}%h${white}}%# ${plain}"
 
 # First character indicates a regular user prompt and second indicates a root prompt
 set promptchars = "%#"
@@ -98,8 +103,9 @@ set notify
 # Verify "rm *" command use
 set rmstar
 
-# Optionally do stuff before a command is executed if this is defined
-#alias precmd 'history -S'
+# Dynamically update prompt by checking the exit code of the previous command
+alias precmd 'test $? -gt 0 && set face="${frown}" || set face="${smile}"' \
+  '; set prompt="${white}<${yellow}%P${white}> (${magenta}%c${white})\n${white}[${cyan}%n${white}@${cyan}%m${white}] ${face} ${white}{${yellow}%h${white}}%# ${plain}"'
 
 # Save each command to the history file after it is entered (this also increments the history number +1)
 #alias postcmd 'history -M'
