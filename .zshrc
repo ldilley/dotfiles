@@ -100,6 +100,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Enable color support for BSD and macOS if TERM supports it
+export CLICOLOR=1
+
 # Uncomment the line below to remove all existing aliases and start fresh
 #unalias -m '*'
 # Aliases

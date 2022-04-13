@@ -92,6 +92,9 @@ end
 #  echo (__fish_git_prompt)
 #end
 
+# Enable color support for BSD and macOS if TERM supports it
+set -gx CLICOLOR 1
+
 # Aliases
 alias cd..="cd .."
 alias cls="clear"

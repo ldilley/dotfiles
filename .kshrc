@@ -54,6 +54,9 @@ set -o noclobber
 # Notify of job completion
 set -o notify
 
+# Enable color support for BSD and macOS if TERM supports it
+export CLICOLOR=1
+
 # Uncomment the line below to remove all existing aliases and start fresh
 #unalias -a
 # Aliases
