@@ -92,14 +92,6 @@ setopt notify
 # Use vi mode in the zsh line editor (-e for emacs)
 bindkey -v
 
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
 # Enable color support for BSD and macOS if TERM supports it
 export CLICOLOR=1
 
