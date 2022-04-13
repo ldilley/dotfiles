@@ -74,7 +74,7 @@ set savehist=(1000 merge)
 
 # Store up to this many lines in memory for the history of the current session
 # The date and time format is also specified.
-set history=(1500 "%h %W/%D/%Y %T - %R\n")
+set history=(1500 "%h %W/%D/%Y %P - %R\n")
 
 # If the previous command is the same as the current one, do not add it to the history
 # Set this to "all" or "erase" to eliminate duplicate entries.
