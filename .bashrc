@@ -75,7 +75,7 @@ export HISTIGNORE=
 export HISTSIZE=1500
 
 # Use timestamps in the history
-export HISTTIMEFORMAT="%D %T - "
+export HISTTIMEFORMAT="%m/%d/%Y %H:%M:%S - "
 
 # Use less instead of more to navigate pages of data on the screen
 export PAGER=less
