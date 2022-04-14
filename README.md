@@ -1,9 +1,10 @@
 # dotfiles
 This repository contains various editor, shell, and other program configuration files. Since git is distributed, this
-allows me to easily retrieve my config files from other systems I work on. If you find any of these files useful, enjoy!
+allows me to easily retrieve my config files from other systems that I work on. If you find any of these files useful,
+then enjoy!
 
-Dependencies:
-* vim
+Recommended:
+* vim or neovim
 * ctags
 * [gitgutter](https://github.com/airblade/vim-gitgutter)
 * [supertab](https://github.com/ervandew/supertab)
