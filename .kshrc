@@ -129,6 +129,10 @@ set_prompt()
     print -n "$WHITE<$YELLOW$date$WHITE> ($MAGENTA$cwd$WHITE)\n[$CYAN`whoami`$WHITE@$CYAN$host_name$WHITE] $face $WHITE{$YELLOW"!"$WHITE}$prompt_sigil $PLAIN"
   fi
 
+  # Add a timestamp entry to the history
+  # Note: This is a kludge since ksh lacks support for history timestamps. This is also executed as a separate command and increments the history number +1.
+  #trap 'date "+# %m/%d/%Y (%a) %H:%M:%S" | read -s' debug
+
   unset retval face date cwd uid prompt_sigil
 }
 
