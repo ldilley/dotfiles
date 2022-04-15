@@ -97,7 +97,7 @@ end
 
 # Add timestamps to history entries and output in ascending order (pipe to sed to reverse output since tac and less -r are not available everywhere)
 function history
-  builtin history --show-time='%m/%d/%Y %H:%M:%S - ' | sed '1!G;h;$!d'
+  builtin history --show-time='%m/%d/%Y (%a) %H:%M:%S - ' | sed '1!G;h;$!d'
 end
 
 # Set backspace as erase key
