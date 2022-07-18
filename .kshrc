@@ -23,7 +23,7 @@ else
   export PATH="$JAVA_HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 fi
 
-# Set the appearance of the shell prompt using the "set_prompt" function defined in the "Functions" section
+# Set appearance of the shell prompt using the "set_prompt" function defined in the "Functions" section
 PS1='`set_prompt`'
 
 # Terminal type
@@ -36,9 +36,9 @@ export TERM=xterm-256color
 export EDITOR=vim
 export VISUAL=vim
 
-# Set the location and name of the history file
-# The default is "~/.sh_history".
-#export HISTFILE=~/.sh_history"
+# Set location and name of the history file
+# The default is: ~/.sh_history
+#export HISTFILE=~/.sh_history
 
 # Store up to this many lines in memory for the history of the current session
 export HISTSIZE=1500
@@ -91,7 +91,7 @@ alias tree="tree -C"
 alias vi="vim"
 
 # Functions
-# Set the appearance of the shell prompt
+# Set appearance of the shell prompt
 set_prompt()
 {
   retval="$?"

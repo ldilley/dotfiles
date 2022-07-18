@@ -69,8 +69,8 @@ set autolist
 # Detect and attempt to correct erroneous input
 set correct=cmd
 
-# Set the location and name of the history file
-# The default is "~/.history".
+# Set location and name of the history file
+# The default is: ~/.history
 #set histfile = ~/.tcsh_history
 
 # Store up to this many lines in the history file and merge with existing
@@ -80,7 +80,7 @@ set savehist=(1000 merge)
 # The date and time format is also specified.
 set history=(1500 "%h %W/%D/%Y (%d) %P - %R\n")
 
-# If the previous command is the same as the current one, do not add it to the history
+# If previous command is the same as the current one, do not add it to the history
 # Set this to "all" or "erase" to eliminate duplicate entries.
 set histdup=prev
 

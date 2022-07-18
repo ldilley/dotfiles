@@ -13,6 +13,10 @@ RED="\[\033[0;31m\]"
 WHITE="\[\033[0;37m\]"
 YELLOW="\[\033[0;33m\]"
 
+# Faces to signify exit status of the last command
+SMILE="${GREEN}:)${PLAIN}"
+FROWN="${RED}:(${PLAIN}"
+
 # Set the Java home below if you have one
 #export JAVA_HOME=/opt/jdk
 
@@ -23,27 +27,40 @@ else
   export PATH="$JAVA_HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 fi
 
-# Change prompt based on the exit code of the last command
-SMILE="${GREEN}:)${PLAIN}"
-FROWN="${RED}:(${PLAIN}"
-FACE="if [ \$? = 0 ]; then echo \"${SMILE}\"; else echo \"${FROWN}\"; fi"
+# Set appearance of the shell prompt
+set_prompt()
+{
+  EXIT_STATUS=$?
+  # Change prompt based on exit code of the last command
+  #FACE="if [ \$? = 0 ]; then echo \"${SMILE}\"; else echo \"${FROWN}\"; fi"
+  if [ $EXIT_STATUS = 0 ]; then
+    export FACE=${SMILE}
+  else
+    export FACE=${FROWN}
+  fi
 
-# Check effective UID and set trailing prompt character appropriately if user is root
-if [[ $EUID -eq 0 ]]; then
-  PROMPT_SIGIL="#"
-else
-  PROMPT_SIGIL="$"
-fi
+  # Check effective UID and set trailing prompt character appropriately if user is root
+  if [[ $EUID -eq 0 ]]; then
+    export PROMPT_SIGIL="#"
+  else
+    export PROMPT_SIGIL="$"
+  fi
 
-# Git repo status support (optional)
-# To obtain: git clone https://github.com/olemb/git-prompt
-# After building (go build git-prompt.go), copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
-if [[ -x `command -v git-prompt` ]]; then
-  # Set the appearance of the shell prompt
-  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE}) \$(git-prompt)\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${YELLOW}\!${WHITE}}${PROMPT_SIGIL} ${PLAIN}"
-else
-  PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] \`${FACE}\` ${WHITE}{${YELLOW}\!${WHITE}}${PROMPT_SIGIL} ${PLAIN}"
-fi
+  # Git repo status support (optional)
+  # To obtain: git clone https://github.com/olemb/git-prompt
+  # After building (go build git-prompt.go), copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
+  if [[ -x `command -v git-prompt` ]]; then
+    export PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE}) \$(git-prompt)\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] ${FACE} ${WHITE}{${YELLOW}\!${WHITE}}${PROMPT_SIGIL} ${PLAIN}"
+  else
+    export PS1="${WHITE}<${YELLOW}\t${WHITE}> (${MAGENTA}\w${WHITE})\n${WHITE}[${CYAN}\u${WHITE}@${CYAN}\h${WHITE}] ${FACE} ${WHITE}{${YELLOW}\!${WHITE}}${PROMPT_SIGIL} ${PLAIN}"
+  fi
+
+  # Append each command to the history file after it is entered
+  history -a
+}
+
+# Set to function that dynamically updates the shell prompt
+PROMPT_COMMAND=set_prompt
 
 # Terminal type
 export TERM=xterm-256color
@@ -55,13 +72,17 @@ export TERM=xterm-256color
 export EDITOR=vim
 export VISUAL=vim
 
+# Set location and name of the history file
+# The default is: ~/.bash_history
+#export HISTFILE=~/.bash_history
+
 # Do not include commands followed by spaces or repeated commands in the history
 export HISTCONTROL=ignoreboth
 
-# Store up to this many lines in .bash_history
+# Store up to this many lines in the history file
 export HISTFILESIZE=10000
 
-# Do not save the defined commands in .bash_history
+# Do not save the defined commands in the history file
 # Example: "df*:free*:ls*"
 export HISTIGNORE=
 
@@ -79,9 +100,6 @@ export PAGER=less
 
 # A reasonable umask (use 027 or 077 for increased security)
 umask 027
-
-# Append each command to .bash_history after it is entered
-PROMPT_COMMAND="history -a"
 
 # Disallow > operator on a file that already exists
 # This is an additional layer of protection against accidental overwrites.
@@ -102,13 +120,13 @@ shopt -s cmdhist
 # Enable extended pattern matching
 shopt -s extglob
 
-# After shell exit, append the history from memory to .bash_history
+# After shell exit, append the history from memory to the history file
 shopt -s histappend
 
-# Allow the modification of a failed history substitution
+# Allow modification of a failed history substitution
 shopt -s histreedit
 
-# Allow the review of a history substitution prior to execution
+# Allow review of a history substitution prior to execution
 shopt -s histverify
 
 # Complete hostnames

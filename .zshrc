@@ -18,7 +18,7 @@ fi
 if [[ -x `command -v git-prompt` ]]; then
   # Allow variable expansion in the shell prompt
   setopt prompt_subst
-  # Set the appearance of the shell prompt
+  # Set appearance of the shell prompt
   PROMPT=$'<%F{yellow}%*%f> (%F{magenta}%1~%f%) `git-prompt`
 [%F{cyan}%n%f@%F{cyan}%m%f] %(?,%F{green}:%)%f,%F{red}:(%f) {%F{yellow}%!%f}%#%b '
 else
@@ -36,7 +36,7 @@ export TERM=xterm-256color
 export EDITOR=vim
 export VISUAL=vim
 
-# Set the location and name of the history file
+# Set location and name of the history file
 HISTFILE=~/.histfile
 
 # Store up to this many lines in memory for the history of the current session
@@ -54,7 +54,7 @@ export PAGER=less
 # A reasonable umask (use 027 or 077 for increased security)
 umask 027
 
-# Append to the history file rather than create a new one
+# Append to history file rather than create a new one
 setopt appendhistory
 
 # Traverse directories without the use of "cd"
@@ -69,7 +69,7 @@ setopt correct
 # Enable extended pattern matching
 setopt extendedglob
 
-# If the previous command is the same as the current one, do not add it to the history
+# If previous command is the same as the current one, do not add it to the history
 setopt histignoredups
 
 # Do not include commands followed by spaces in the history

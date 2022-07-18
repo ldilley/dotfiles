@@ -67,12 +67,12 @@ set __fish_git_prompt_color_untrackedfiles 0000ff
 set __fish_git_prompt_color_prefix ffffff
 set __fish_git_prompt_color_suffix ffffff
 
-# Set the appearance of the shell prompt
+# Set appearance of the shell prompt
 function fish_prompt
   # Save the return code from the last command
   set -l retval $status
 
-  # Shorten the current working directory to '~' if in home directory
+  # Shorten current working directory to '~' if in home directory
   set -l cwd (pwd)
   if [ $cwd = $HOME ]
     set cwd "~"
@@ -90,7 +90,7 @@ function fish_prompt
   echo $white" > "$plain
 end
 
-# Set the appearance of the right-side prompt
+# Set appearance of the right-side prompt
 #function fish_right_prompt
 #  echo (__fish_git_prompt)
 #end

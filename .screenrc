@@ -5,10 +5,10 @@
 # Display notification when activity is detected for a window
 activity "Activity detected in %t (%n)!"
 
-# Do not show the remnants of previously opened programs such as editors
+# Do not show remnants of previously opened programs such as editors
 altscreen on
 
-# Ensure the session is saved on hangup
+# Ensure session is saved on hangup
 autodetach on
 
 # Periodically execute the defined command
@@ -18,22 +18,22 @@ autodetach on
 # Display notification when bell is detected for a window
 bell_msg "Bell detected in %t (%n)!"
 
-# Set the window titles
+# Set window titles
 caption always
 caption string "%n %t"
 
-# Start the session using my home directory as the working directory
+# Start session using my home directory as the working directory
 chdir
 
 # Detect activity in new windows
 defmonitor on
 
-# Set the status bar
+# Set status bar
 hardstatus alwayslastline 
 hardstatus string "%{= kg}[%{c}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{m}%m/%d/%Y %{r}%c%{g}]"
 
 # Start with a few named windows and configure the layout
-# Navigate the windows with ctrl+a+<window_number> and areas with ctrl+a+<tab>.
+# Navigate windows using ctrl+a+<window_number> and areas using ctrl+a+<tab>.
 # Or use the custom keybinds defined at the bottom of this file.
 screen -t shell_0 0 bash # start a bash shell in the larger top area
 split                    # split horizontally, creating a top and bottom area
@@ -55,7 +55,7 @@ startup_message off
 term screen-256color
 #term xterm-256color
 
-# Disable the visual bell to prevent the screen flash
+# Disable visual bell to prevent the screen flash
 vbell off
 
 # Custom keybinds
