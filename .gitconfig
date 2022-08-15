@@ -26,6 +26,8 @@
   lineNumber = true
 [commit]
   gpgsign = true
+[pull]
+  rebase = false
 [push]
   default = simple
 [alias]
