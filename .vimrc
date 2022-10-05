@@ -20,11 +20,12 @@ map <C-L> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 set completeopt=menuone,menu,longest,preview
 
-" Function to calculate git additions, changes, and deletions (requires vim-gitgutter plugin)
-function! GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
-endfunction
+" Function to calculate git additions, changes, and deletions (requires vim-gitgutter plugin: https://github.com/airblade/vim-gitgutter)
+" Uncomment the function below after installing the gitgutter plugin.
+"function! GitStatus()
+"  let [a,m,r] = GitGutterGetHunkSummary()
+"  return printf('+%d ~%d -%d', a, m, r)
+"endfunction
 
 " Update time in ms (default is 4000 or 4 seconds -- a lower value allows gitgutter change updates to appear more quickly and also affects swp file write frequency)
 set updatetime=100
@@ -33,7 +34,10 @@ set updatetime=100
 set noswapfile
 
 " Display an informational status bar (requires vim enhanced)
-set statusline=[File=%F]%m%r%h%w\ [Format=%{&ff}]\ [Type=%Y]\ [ASCII=\%03.3b(0x\%02.2B)]\ [Row=%l/%L(%p%%)]\ [Column=%v]\ [Offset=%o(0x%O)]\ [Changes=%{GitStatus()}]\ %=[Date=%{strftime(\"%m-%d-%Y\")}]\ [Time=%{strftime(\"%H:%M\")}]
+" Uncomment the line below after installing the gitgutter plugin.
+"set statusline=[File=%F]%m%r%h%w\ [Format=%{&ff}]\ [Type=%Y]\ [ASCII=\%03.3b(0x\%02.2B)]\ [Row=%l/%L(%p%%)]\ [Column=%v]\ [Offset=%o(0x%O)]\ [Changes=%{GitStatus()}]\ %=[Date=%{strftime(\"%m-%d-%Y\")}]\ [Time=%{strftime(\"%H:%M\")}]
+" Comment the line below if using the statusline above that contains gitgutter support.
+set statusline=[File=%F]%m%r%h%w\ [Format=%{&ff}]\ [Type=%Y]\ [ASCII=\%03.3b(0x\%02.2B)]\ [Row=%l/%L(%p%%)]\ [Column=%v]\ [Offset=%o(0x%O)]\ %=[Date=%{strftime(\"%m-%d-%Y\")}]\ [Time=%{strftime(\"%H:%M\")}]
 set laststatus=2
 
 " Set status bar colors
