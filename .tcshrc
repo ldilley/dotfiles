@@ -107,11 +107,13 @@ set rmstar
 # Git status support (optional)
 # To obtain: git clone https://github.com/olemb/git-prompt
 # After building (go build git-prompt.go), copy the resulting binary to somewhere in your path such as /usr/local/bin or ~/bin.
-alias precmd 'test $? -gt 0 && set face="${frown}" || set face="${smile}"' \
-  '; set prompt="${white}<${yellow}%P${white}> (${magenta}%c${white}) %{`git-prompt`%} \n${white}[${cyan}%n${white}@${cyan}%m${white}] ${face} ${white}{${yellow}%h${white}}%# ${plain}"'
-# Comment the precmd alias above and uncomment the alias below to not use git status support.
-#alias precmd 'test $? -gt 0 && set face="${frown}" || set face="${smile}"' \
-#  '; set prompt="${white}<${yellow}%P${white}> (${magenta}%c${white})\n${white}[${cyan}%n${white}@${cyan}%m${white}] ${face} ${white}{${yellow}%h${white}}%# ${plain}"'
+if ( `where git-prompt` == "" ) then
+  alias precmd 'test $? -gt 0 && set face="${frown}" || set face="${smile}"' \
+    '; set prompt="${white}<${yellow}%P${white}> (${magenta}%c${white})\n${white}[${cyan}%n${white}@${cyan}%m${white}] ${face} ${white}{${yellow}%h${white}}%# ${plain}"'
+else
+  alias precmd 'test $? -gt 0 && set face="${frown}" || set face="${smile}"' \
+    '; set prompt="${white}<${yellow}%P${white}> (${magenta}%c${white}) %{`git-prompt`%} \n${white}[${cyan}%n${white}@${cyan}%m${white}] ${face} ${white}{${yellow}%h${white}}%# ${plain}"'
+endif
 
 # Save each command to the history file after it is entered (this also increments the history number +1)
 #alias postcmd 'history -M'
