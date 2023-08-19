@@ -35,9 +35,9 @@ set noswapfile
 
 " Display an informational status bar (requires vim enhanced)
 " Uncomment the line below after installing the gitgutter plugin.
-"set statusline=[File=%F]%m%r%h%w\ [Format=%{&ff}]\ [Type=%Y]\ [ASCII=\%03.3b(0x\%02.2B)]\ [Row=%l/%L(%p%%)]\ [Column=%v]\ [Offset=%o(0x%O)]\ [Changes=%{GitStatus()}]\ %=[Date=%{strftime(\"%m-%d-%Y\")}]\ [Time=%{strftime(\"%H:%M\")}]
+"set statusline=[File=%F]%m%r%h%w\ [Format=%{&ff}]\ [Type=%Y]\ [ASCII=\%03.3b(0x\%02.2B)]\ [Row=%l/%L(%p%%)]\ [Column=%v]\ [Offset=%o(0x%O)]\ [Changes=%{GitStatus()}]\ %=[Date=%{strftime(\"%Y-%m-%d\")}]\ [Time=%{strftime(\"%H:%M\")}]
 " Comment the line below if using the statusline above that contains gitgutter support.
-set statusline=[File=%F]%m%r%h%w\ [Format=%{&ff}]\ [Type=%Y]\ [ASCII=\%03.3b(0x\%02.2B)]\ [Row=%l/%L(%p%%)]\ [Column=%v]\ [Offset=%o(0x%O)]\ %=[Date=%{strftime(\"%m-%d-%Y\")}]\ [Time=%{strftime(\"%H:%M\")}]
+set statusline=[File=%F]%m%r%h%w\ [Format=%{&ff}]\ [Type=%Y]\ [ASCII=\%03.3b(0x\%02.2B)]\ [Row=%l/%L(%p%%)]\ [Column=%v]\ [Offset=%o(0x%O)]\ %=[Date=%{strftime(\"%Y-%m-%d\")}]\ [Time=%{strftime(\"%H:%M\")}]
 set laststatus=2
 
 " Set status bar colors
